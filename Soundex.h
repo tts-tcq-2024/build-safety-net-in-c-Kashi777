@@ -5,6 +5,7 @@
 #include <ctype.h>
 #include <string.h>
 
+// Get the code from Table
 char getSoundexCodeFromTable(char c, const char *soundexTable)
 {
     c = toupper(c);
@@ -15,6 +16,7 @@ char getSoundexCodeFromTable(char c, const char *soundexTable)
 }
 
 char getSoundexCode(char c) {
+    // Update the table with A to Z characters by numbers 
     static const char soundexTable[26] = {
         '0', '1', '2', '3', '0', '1', '2', '0', // A-H
         '0', '2', '2', '4', '5', '5', '0', '1', // I-P
@@ -25,7 +27,6 @@ char getSoundexCode(char c) {
     return getSoundexCodeFromTable(c, soundexTable);
     
 }
-
 
 void validateCode(char code, char *soundex, int *sIndex)
 {
