@@ -30,7 +30,7 @@ char getSoundexCode(char c) {
 void validateCode(char code, char *soundex, int *sIndex)
 {
     if (code != '0' && code != soundex[*sIndex - 1]) {
-            soundex[*sIndex++] = code;
+            soundex[(*sIndex)++] = code;
     }
 }
 
